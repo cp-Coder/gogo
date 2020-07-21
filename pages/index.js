@@ -1,28 +1,41 @@
-import Head from "next/head"
-import { Component } from 'react'
-import { attributes, react as HomeContent } from '../content/home.md';
+import Head from 'next/head'
+import Footer from '../components/Footer'
+import Hero from '../components/Hero'
 
-export default class Home extends Component {
-  render() {
-    let { title, cats } = attributes;
-    return (
-      <>
+const Guestbook = (props) => {
+  return (
+    <>
       <Head>
-      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="utf-8" />
+        <link
+          rel="shortcut icon"
+          type="image/x-icon"
+          href="/static/favicon.png"
+        />
       </Head>
-      <article>
-      <h1>{title}</h1>
-      <HomeContent />
-      <ul>
-      {cats.map((cat, k) => (
-          <li key={k}>
-        <h2>{cat.name}</h2>
-        <p>{cat.description}</p>
-        </li>
-  ))}
-  </ul>
-    </article>
+      <style jsx global>{`
+        body {
+          margin: 0px;
+          padding: 0px;
+        }
+      `}</style>
+      <div>
+        <Hero />
+        <Footer />
+      </div>
+      <style jsx>{`
+        div {
+          display: flex;
+          margin-left: auto;
+          margin-right: auto;
+          font-family: sans-serif, sans;
+          flex-direction: column;
+          align-items: center;
+        }
+      `}</style>
     </>
   )
-  }
 }
+
+export default Guestbook

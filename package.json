@@ -1,32 +1,21 @@
 {
-  "name": "gogo",
+  "name": "with-graphql-faunadb",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "npm run build && next export"
+    "setup": "node ./scripts/setup.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dcartertwo/gogo.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dcartertwo/gogo/issues"
-  },
-  "homepage": "https://github.com/dcartertwo/gogo#readme",
   "dependencies": {
-    "next": "^9.3.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "next": "latest",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
   },
   "devDependencies": {
-    "frontmatter-markdown-loader": "^3.3.0"
+    "faunadb": "2.11.1",
+    "request": "2.88.0",
+    "stream-to-promise": "2.2.0"
   }
 }
