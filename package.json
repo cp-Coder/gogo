@@ -1,0 +1,23 @@
+{
+  "name": "with-graphql-faunadb",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "setup": "node ./scripts/setup.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "next": "latest",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "sass": "^1.26.10"
+  },
+  "devDependencies": {
+    "faunadb": "2.11.1",
+    "request": "2.88.0",
+    "stream-to-promise": "2.2.0"
+  }
+}
