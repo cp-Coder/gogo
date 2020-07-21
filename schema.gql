@@ -65,18 +65,6 @@ type Card {
 }
 # A query named 'entries' which returns an array of GuestbookEntry objects
 # Implicit arguments: _size (count) and _cursor (location within the Index)
-type Query {
-  zords(name: String!): [Card {
-    id
-    name
-    image
-    ranger
-    description
-    color
-    releaseDate
-    set
-  }]
-}
 
 type Query {
   getCardInformation($id: Int): [CardInformation]
@@ -84,4 +72,3 @@ type Query {
   getRangers: [Ranger]
   getMegazords: [Megazord]
 }
-
