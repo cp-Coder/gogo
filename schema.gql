@@ -34,11 +34,14 @@ enum RangerColor {
   WHITE
 }
 
-type Card {
+interface Card {
   id: ID!
   name: String!
   description: String!
   set: String!
+}
+
+type Card {
   entity: CardType!
   actionType: ActionType
   attack: Int
