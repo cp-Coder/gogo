@@ -1,3 +1,5 @@
+const dotenv = require('dotenv')
+dotenv.config()
 module.exports = {
   env: {
     /**
@@ -8,7 +10,7 @@ module.exports = {
     | https://docs.fauna.com/fauna/current/security/
     |--------------------------------------------------
     */
-    faunaDbSecret: '< GRAPHQL_SECRET >',
+    faunaDbSecret: process.env.FAUNADB_API_KEY,
     faunaDbGraphQlEndpoint: 'https://graphql.fauna.com/graphql',
   },
 }

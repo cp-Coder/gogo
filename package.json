@@ -9,6 +9,7 @@
     "setup": "node ./scripts/setup.js"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "next": "latest",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
