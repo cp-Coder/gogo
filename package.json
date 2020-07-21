@@ -12,7 +12,8 @@
     "dotenv": "^8.2.0",
     "next": "latest",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react-dom": "^16.10.2",
+    "sass": "^1.26.10"
   },
   "devDependencies": {
     "faunadb": "2.11.1",

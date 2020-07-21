@@ -1,4 +1,5 @@
 const dotenv = require('dotenv')
+const path = require('path')
 dotenv.config()
 module.exports = {
   env: {
@@ -12,5 +13,8 @@ module.exports = {
     */
     faunaDbSecret: process.env.FAUNADB_API_KEY,
     faunaDbGraphQlEndpoint: 'https://graphql.fauna.com/graphql',
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
   },
 }
