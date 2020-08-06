@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar';
 
-export default function Index() {
-  return <div>
+export default () => {
+  return(
     <Navbar />
-  </div>
+  )
 }
