@@ -10,10 +10,15 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
+    "faunadb": "^4.0.3",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
     "next": "latest",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "sass": "^1.26.10"
+    "react-hook-form": "^6.15.1",
+    "sass": "^1.26.10",
+    "swr": "^0.4.1"
   },
   "devDependencies": {
     "faunadb": "2.11.1",
