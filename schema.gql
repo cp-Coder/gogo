@@ -314,6 +314,7 @@ type Megazord {
 
 
 type Query {
+  allCards: [Card!]
   allCardInfo: [CardInfo!]
   allZords: [Zord!]
   allRangers: [Ranger!]

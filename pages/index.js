@@ -1,7 +1,6 @@
 import useSWR from 'swr';
 import { gql } from 'graphql-request';
 import Layout from '../components/layout';
-import styles from '../styles/Home.module.css';
 import { graphQLClient } from '../utils/graphql-client';
 
 const fetcher = async (query) => await graphQLClient.request(query);
@@ -10,11 +9,13 @@ const Home = () => {
    const { data, error } = useSWR(
     gql`
       {
-        allTodos {
+        allCards {
           data {
-            _id
-            task
-            completed
+            id
+            name
+            description
+            entity
+            set
           }
         }
       }
@@ -22,23 +23,24 @@ const Home = () => {
     fetcher
   );
 
-  if (error) return <div>failed to load</div>;
+  if (error) return error;
 
   return (
     <Layout>
       <h1>Next Fauna GraphQL CRUD</h1>
-
-      {data ? (
+      data
+      /*{data ? (
         <ul>
-          {data.allTodos.data.map((todo) => (
-            <li key={todo._id} className={styles.todo}>
-              <span>{todo.task}</span>
+          {data.allCards.data.map((card) => (
+            <li key={card.id}>
+              <span>{card.name}</span>
             </li>
           ))}
         </ul>
       ) : (
         <div>loading...</div>
       )}
+      */
     </Layout>
   );
 };
