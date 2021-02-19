@@ -89,7 +89,7 @@ export const heroFormSubmitButton = css.resolve`
     cursor: pointer;
   }
 `
-export const heroEntries = css.resolve`
+export const cardEntries = css.resolve`
   div {
     flex-grow: 0;
     flex-shrink: 10;

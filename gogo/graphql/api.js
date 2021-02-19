@@ -22,14 +22,15 @@ function getErrorMessage(error, data) {
 | Learn more about GraphQL: https://graphql.org/learn/
 |--------------------------------------------------
 */
-export const useGuestbookEntries = () => {
-  const query = `query Entries($size: Int) {
-    entries(_size: $size) {
+export const useCards = () => {
+  const query = `query Cards($size: Int) {
+    allCards(_size: $size) {
       data {
-        _id
-        _ts
-        twitter_handle
-        story
+        id
+        name
+        description
+        entity
+        set
       }
       after
     }
@@ -73,32 +74,32 @@ export const useGuestbookEntries = () => {
 | Learn more about GraphQL mutations: https://graphql.org/learn/queries/#mutations
 |--------------------------------------------------
 */
-export const createGuestbookEntry = async (twitterHandle, story) => {
-  const query = `mutation CreateGuestbookEntry($twitterHandle: String!, $story: String!) {
-    createGuestbookEntry(data: {
-      twitter_handle: $twitterHandle,
-      story: $story
-    }) {
-      _id
-      _ts
-      twitter_handle
-      story
-    }
-  }`
+// export const createGuestbookEntry = async (twitterHandle, story) => {
+//   const query = `mutation CreateGuestbookEntry($twitterHandle: String!, $story: String!) {
+//     createGuestbookEntry(data: {
+//       twitter_handle: $twitterHandle,
+//       story: $story
+//     }) {
+//       _id
+//       _ts
+//       twitter_handle
+//       story
+//     }
+//   }`
 
-  const res = await fetch(process.env.NEXT_PUBLIC_FAUNADB_GRAPHQL_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_FAUNADB_SECRET}`,
-      'Content-type': 'application/json',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-      variables: { twitterHandle, story },
-    }),
-  })
-  const data = await res.json()
+//   const res = await fetch(process.env.NEXT_PUBLIC_FAUNADB_GRAPHQL_ENDPOINT, {
+//     method: 'POST',
+//     headers: {
+//       Authorization: `Bearer ${process.env.NEXT_PUBLIC_FAUNADB_SECRET}`,
+//       'Content-type': 'application/json',
+//       Accept: 'application/json',
+//     },
+//     body: JSON.stringify({
+//       query,
+//       variables: { twitterHandle, story },
+//     }),
+//   })
+//   const data = await res.json()
 
-  return data
-}
+//   return data
+// }
